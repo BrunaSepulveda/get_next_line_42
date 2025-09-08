@@ -20,3 +20,20 @@ Escreva uma função que retorne uma linha lida de um file descriptor.
   <li>O arquivo get_next_line.h deve conter pelo menos o protótipo da função get_next_line().</li>
   <li>Adicione todas as funções auxiliares necessárias no arquivo get_next_line_utils.c.</li>
 </ul>
+
+## Executando
+Comandos para execução:
+- Compila a biblioteca get_next_line.a: `make`
+- Compila o executável de teste get_next_line_test (mas não roda): `make test`
+- Roda o executável passando um arquivo (pode ser caminho relativo ou absoluto):
+```bash
+make run ARGS=arquivo.txt
+make run ARGS=inputs/teste1.txt
+make run ARGS=/home/bruna/testes/meu_arquivo.txt
+```
+- Lê a entrada diretamente do terminal (stdin): `make run_stdin`
+- Recompila tudo (re), recompila o executável (test), roda com arquivo (run) e limpa (fclean): `make rrun ARGS=arquivo.txt`
+- Recompila tudo (re), roda lendo do terminal (run_stdin) e limpa (fclean): `make rstdin`
+- Apaga apenas os objetos .o: `make clean`
+- Apaga .o, a lib .a e o executável de teste: `make fclean`
+- Faz fclean e recompila tudo: `make re`

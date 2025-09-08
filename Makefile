@@ -14,7 +14,7 @@ TEST_OBJ    = $(TEST_SRC:.c=.o)
 
 INCLUDES    = -I.
 
-.PHONY: all clean fclean re test run rrun
+.PHONY: all clean fclean re test run rrun run_stdin rstdin
 
 all: $(NAME)
 
@@ -29,11 +29,25 @@ $(EXEC): $(NAME) $(TEST_OBJ)
 
 test: $(EXEC)
 
+ARGS ?=
 run: $(EXEC)
 	./$(EXEC) $(ARGS)
 
-rrun: re
-	@$(MAKE) --no-print-directory run
+run_stdin: $(EXEC)
+	@echo "Digite texto (Ctrl+D para encerrar):"
+	./$(EXEC)
+
+rrun:
+	$(MAKE) re
+	$(MAKE) test
+	$(MAKE) run ARGS=$(ARGS)
+	$(MAKE) fclean
+
+rstdin:
+	$(MAKE) re
+	$(MAKE) test
+	$(MAKE) run_stdin
+	$(MAKE) fclean
 
 clean:
 	rm -f $(OBJ) $(TEST_OBJ)
