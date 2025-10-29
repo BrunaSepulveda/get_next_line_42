@@ -6,9 +6,9 @@ Este projeto não só permitirá que você adicione uma função muito prática 
 | Nome da função                  |   get_next_line                                                                              |
 | Protótipo                       |  char *get_next_line(int fd);                                                                |
 | Ficheiros para entregar         |  get_next_line.c, get_next_line_utils.c, get_next_line.h                                     |
-| Parâmetros fd                   |  fd: O file descriptor a ser lido                                                                                         |
-| Valor de retorno                |  A linha lida, se tudo correr bem NULL, se não houver nada a ser lido ou em caso de erro   |
-| Funções externas autorizadas    |  read, malloc, free                                                                                         |
+| Parâmetros fd                   |  fd: O file descriptor a ser lido                                                            |
+| Valor de retorno                |  A linha lida, se tudo correr bem NULL, se não houver nada a ser lido ou em caso de erro     |
+| Funções externas autorizadas    |  read, malloc, free                                                                          |
 
 ## Descrição
 Escreva uma função que retorne uma linha lida de um file descriptor.
